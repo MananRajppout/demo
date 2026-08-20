@@ -1307,14 +1307,114 @@ a {
 .guide-restore:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
 .guide-restore[hidden]{display:none}
 
+/* ══════════ jurisdiction bar ══════════ */
+.jurisbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.jb-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.selectwrap{position:relative}
+.selectwrap::after{content:"▾";position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  pointer-events:none;color:var(--ink-dim);font-size:.7rem}
+.selectwrap select{appearance:none;-webkit-appearance:none;font-family:inherit;font-size:.82rem;font-weight:600;
+  color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
+  padding:9px 32px 9px 14px;border-radius:999px;cursor:pointer;transition:.2s}
+.selectwrap select:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.3)}
+.selectwrap select:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.selectwrap.wide select{width:100%;border-radius:12px}
+.selectwrap select option{background:#0f1338;color:#fff}
+.statewarn{font-size:.8rem;line-height:1.6;color:var(--ink-soft);background:rgba(255,176,32,.08);
+  border:1px solid rgba(255,176,32,.3);border-radius:12px;padding:13px 16px;margin-bottom:18px}
+.statewarn b{color:var(--gold)}
+.statewarn.ok{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.statewarn.ok b{color:var(--green)}
+
+/* ══════════ upload ══════════ */
+.uploadGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:start}
+@media(max-width:1000px){.uploadGrid{grid-template-columns:1fr}}
+.dropzone{border:2px dashed rgba(255,255,255,.2);border-radius:16px;padding:34px 24px;text-align:center;
+  cursor:pointer;transition:.22s;color:var(--ink-dim);background:rgba(255,255,255,.025)}
+.dropzone:hover,.dropzone.over{border-color:var(--cyan);background:rgba(56,182,255,.07);color:var(--cyan)}
+.dropzone:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.dropzone h4{font-size:1rem;font-weight:700;color:#fff;margin:12px 0 5px}
+.dropzone p{font-size:.8rem;color:var(--ink-dim)}
+.dropzone .link{color:var(--cyan);text-decoration:underline}
+.dropzone .warn{color:var(--gold)}
+.orline{display:flex;align-items:center;gap:14px;margin:18px 0;color:var(--ink-dim);font-size:.75rem}
+.orline::before,.orline::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.12)}
+.pastebox{width:100%;font-family:inherit;font-size:.86rem;line-height:1.7;color:#eaefff;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:14px;
+  padding:16px 18px;resize:vertical;transition:.2s}
+.pastebox:focus{outline:none;border-color:var(--cyan);background:rgba(56,182,255,.05)}
+.pastebox.flash{border-color:var(--green);box-shadow:0 0 0 3px rgba(52,211,153,.2)}
+.pastebox.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(255,92,108,.18)}
+.pastebox::placeholder{color:var(--ink-dim)}
+.uploadActions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+.uploadActions .selectwrap{flex:0 0 240px}
+.uploadActions .btn{border:none;cursor:pointer;font-family:inherit;padding:13px 24px;font-size:.88rem}
+.linkbtn{font-family:inherit;font-size:.8rem;color:var(--ink-dim);background:transparent;border:none;
+  cursor:pointer;text-decoration:underline;padding:6px}
+.linkbtn:hover{color:#fff}
+.privacy{font-size:.72rem;color:var(--ink-dim);margin-top:12px}
+.samples{padding:8px 12px 14px}
+.sample{display:block;width:100%;text-align:left;font-family:inherit;cursor:pointer;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;
+  padding:13px 15px;margin-top:9px;transition:.2s;position:relative}
+.sample:hover{background:rgba(56,182,255,.09);border-color:rgba(56,182,255,.45);transform:translateX(3px)}
+.sample .stag{display:block;font-size:.86rem;font-weight:700;color:#fff;margin-bottom:3px}
+.sample .ssub{display:block;font-size:.73rem;color:var(--ink-dim);line-height:1.5;padding-right:44px}
+.sample .sgo{position:absolute;right:14px;top:14px;font-size:.72rem;color:var(--cyan);font-weight:600}
+.infocard{margin-top:16px}
+.checklist{list-style:none;padding:4px 16px 14px;margin:0}
+.checklist li{font-size:.78rem;color:var(--ink-soft);line-height:1.55;padding:5px 0 5px 20px;position:relative}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:.8rem}
+.checklist.plus li::before{content:"+";color:var(--cyan)}
+.infonote{font-size:.72rem;color:var(--ink-dim);line-height:1.6;padding:0 16px 16px}
+
+/* ══════════ results extras ══════════ */
+.sev.Pass{color:var(--green);background:rgba(52,211,153,.12)}
+.find.sev-Pass{opacity:.66}
+.find.sev-Pass .ft{font-weight:600}
+.sw.pass{background:var(--green)}
+.fbar .pz b{color:var(--green)}
+mark.evm{background:rgba(56,182,255,.28);color:#fff;padding:2px 3px;border-radius:3px;
+  box-shadow:0 0 0 2px rgba(56,182,255,.5)}
+
+/* ══════════ dashboard extras ══════════ */
+.alerts{display:grid;gap:11px;margin-bottom:18px}
+.alert{display:flex;align-items:flex-start;gap:13px;padding:14px 17px;border-radius:12px;font-size:.83rem;
+  line-height:1.6;color:var(--ink-soft)}
+.alert b{color:#fff}
+.alert.crit{background:rgba(255,92,108,.09);border:1px solid rgba(255,92,108,.34)}
+.alert.warn{background:rgba(255,176,32,.08);border:1px solid rgba(255,176,32,.3)}
+.alert .ai{width:22px;height:22px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;font-size:.78rem;color:#fff}
+.alert.crit .ai{background:var(--red)}.alert.warn .ai{background:var(--gold);color:#3a2a00}
+.trendup{color:var(--green)}.trenddn{color:var(--green)}
+.chartwrap{padding:16px 18px}
+.trendsvg{width:100%;height:auto;display:block}
+.chartnote{font-size:.73rem;color:var(--ink-dim);margin-top:10px;line-height:1.55}
+.clin tbody tr{cursor:pointer}
+.clin tbody tr.on{background:rgba(56,182,255,.09)}
+.clin tbody tr:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px}
+.drill{padding:18px 19px;border-top:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.16)}
+.drill h4{font-size:.95rem;font-weight:700;margin-bottom:12px;color:var(--cyan)}
+.dgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px}
+@media(max-width:760px){.dgrid{grid-template-columns:1fr}}
+.dl{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);
+  font-weight:700;margin-bottom:7px}
+.drill ul{margin:0 0 0 17px}
+.drill li,.drill p{font-size:.8rem;color:var(--ink-soft);line-height:1.65;margin-bottom:5px}
+.srow.active{background:rgba(56,182,255,.07);border-radius:8px;padding-left:10px;padding-right:10px}
+
+/* [hidden] must beat display rules */
+.platform [hidden]{display:none !important}
+
 </style>
 </head>
 
 <body>
   <div class="strapline" style="background:#04051c;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 0;font-size:.72rem;color:#8a91bf">
     <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
-      <span><b style="color:#38b6ff">Demo</b> — working prototype. Sample data only; no patient information.</span>
-      <span>Prepared for Sure Foundation Behavioral Health Services</span>
+      <span><b style="color:#38b6ff">Working prototype</b> — checks run live in your browser. Use de-identified documents only.</span>
+      <span>Omnificode Ltd · for Sure Foundation Behavioral Health Services</span>
     </div>
   </div>
 
@@ -1801,130 +1901,189 @@ a {
       </div>
     </section>
   
-    <!-- ============ CCIS PLATFORM (Phase 1 working prototype) ============ -->
+    <!-- ============ CCIS PLATFORM ============ -->
     <section class="platform" id="platform">
       <div class="container">
+
         <div class="plat-head">
-          <p class="plat-eyebrow">Demo · Working Prototype</p>
+          <p class="plat-eyebrow">Working Prototype · Live Analysis</p>
           <h2 class="plat-title">The Platform, <span class="gradient-word">Working.</span></h2>
-          <p class="plat-sub">This is not a picture of a screen. Everything below runs. Pick a document, watch it be reviewed, and read what the system found — exactly as your clinicians would.</p>
+          <p class="plat-sub">Nothing here is pre-recorded. Paste or upload any note and the compliance checks run live, in this page, on your text.</p>
         </div>
 
-        <div class="howto">
-          <div class="howto-step"><span class="hn">1</span>
-            <div><h4>Choose one of your document types</h4>
-            <p>A SAIOP group note, a Person-Centered Plan, or a Peer Support note — the three that generate the most audit findings.</p></div></div>
-          <div class="howto-step"><span class="hn">2</span>
-            <div><h4>Read what the system found</h4>
-            <p>Each finding names the rule, highlights the exact words that triggered it, and writes the correction. Click a finding to light up its evidence.</p></div></div>
-          <div class="howto-step"><span class="hn">3</span>
-            <div><h4>Switch to “After correction”</h4>
-            <p>The same session, documented properly, re-scored in front of you. That gap is what CCIS closes — before the note is signed.</p></div></div>
-          <button class="btn btn-primary howto-go" data-goto="review">Start the walkthrough <span class="arrow">→</span></button>
+        <div class="jurisbar">
+          <div class="jb-left">
+            <span class="jl">Jurisdiction</span>
+            <div class="selectwrap">
+              <select id="stateSel" aria-label="State">
+                <option value="NC" selected>North Carolina</option>
+                <option value="SC">South Carolina</option>
+                <option value="VA">Virginia</option>
+                <option value="GA">Georgia</option>
+                <option value="TN">Tennessee</option>
+              </select>
+            </div>
+            <div class="selectwrap">
+              <select id="payerSel" aria-label="Payer">
+                <option value="trillium" selected>Medicaid — Trillium LME/MCO</option>
+                <option value="medicaid">Medicaid — state baseline</option>
+                <option value="commercial">Commercial plan</option>
+                <option value="statefunded">State-funded contract</option>
+              </select>
+            </div>
+            <span class="chip live" id="ruleChip"><span class="dot"></span><b id="ruleCount">129</b>&nbsp;rules active</span>
+          </div>
+          <span class="jn">Set by where you are enrolled — not by client zip code</span>
         </div>
-        <button class="guide-restore" hidden>Show the 3-step guide again</button>
-
-        <div class="juris">
-          <span class="jl">Rule set in force</span>
-          <span class="chip live"><span class="dot"></span>North Carolina</span>
-          <span class="chip">NC Medicaid</span>
-          <span class="chip">Trillium LME/MCO</span>
-          <span class="chip">Policies eff. 01 Jan 2026</span>
-          <span class="jn">Set per organisation · payer overlay applied per document</span>
-        </div>
+        <div class="statewarn" id="stateWarn" hidden></div>
 
         <nav class="tabs" role="tablist">
-          <button role="tab" aria-selected="true"  data-tab="over">Phase 1 overview</button>
-          <button role="tab" aria-selected="false" data-tab="review">Document review</button>
-          <button role="tab" aria-selected="false" data-tab="dash">Supervisor dashboard</button>
-          <button role="tab" aria-selected="false" data-tab="audit">Monthly mock audit</button>
+          <button role="tab" aria-selected="true"  data-tab="upload">New review</button>
+          <button role="tab" aria-selected="false" data-tab="review">Results</button>
+          <button role="tab" aria-selected="false" data-tab="dash">Dashboard</button>
+          <button role="tab" aria-selected="false" data-tab="audit">Mock audit</button>
           <button role="tab" aria-selected="false" data-tab="rules">Rule library</button>
+          <button role="tab" aria-selected="false" data-tab="over">About this build</button>
         </nav>
 
-        <!-- OVERVIEW -->
-        <section class="panel" id="over">
-          <div class="panel-intro"><h3>What this demo shows</h3><p>A preview of what Phase 1 produces: a written Compliance Rule Book defining all 129 checks, and this working prototype. Nothing here is a placeholder — the rules shown in the review screen are the real ones, traced to the North Carolina policies they come from.</p></div>
-          <div class="statRow">
-            <div class="stat"><div class="n">129</div><div class="l">compliance checks defined</div></div>
-            <div class="stat"><div class="n">6</div><div class="l">document types covered</div></div>
-            <div class="stat"><div class="n">9</div><div class="l">regulatory sources verified</div></div>
-            <div class="stat"><div class="n">55</div><div class="l">rules portable to any state</div></div>
+        <!-- ══════ UPLOAD ══════ -->
+        <section class="panel" id="upload">
+          <div class="panel-intro">
+            <h3>Submit a document for review</h3>
+            <p>This is what a clinician sees before signing a note. Drop a file, paste the text, or load one of the sample documents. The checks run on whatever you give it.</p>
           </div>
-          <div class="card"><h2>What Phase 1 will deliver <em>weeks 1–2</em></h2>
-            <div class="steps">
-              <div class="step"><div class="sn">1</div><div><h4>Compliance Rule Book</h4><p>All 129 checks written out per document type, each traced to its source policy and mapped to the score.</p></div><span class="done y">Drafted</span></div>
-              <div class="step"><div class="sn">2</div><div><h4>Scoring model and thresholds</h4><p>The 100-point rubric, plus the separate signature decision that blocks a document on any critical failure regardless of score.</p></div><span class="done y">Drafted</span></div>
-              <div class="step"><div class="sn">3</div><div><h4>Interactive prototype</h4><p>This page — the full interface, working, before a line of production code is written.</p></div><span class="done y">Drafted</span></div>
-              <div class="step"><div class="sn">4</div><div><h4>Clinical Director sign-off</h4><p>Ten open questions in Section 14 of the Rule Book need your decision before the rules are final.</p></div><span class="done n">Awaiting you</span></div>
-            </div></div>
-          <div class="foot"><b>Where to start.</b> Open <span style="color:#fff">Document review</span> and switch between “As submitted” and “After correction” on the same SAIOP group note. That single comparison is the product.</div>
+
+          <div class="uploadGrid">
+            <div>
+              <div class="dropzone" id="drop" tabindex="0" role="button" aria-label="Upload a document">
+                <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M3 15v3a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-3"/></svg>
+                <h4>Drop a document here</h4>
+                <p>or <span class="link">browse your files</span> — .txt, .md, .docx, .pdf</p>
+                <input type="file" id="fileInput" accept=".txt,.md,.rtf,.docx,.pdf,.doc" hidden>
+              </div>
+
+              <div class="orline"><span>or paste the text</span></div>
+
+              <textarea id="pasteBox" class="pastebox" rows="9"
+                placeholder="Paste a clinical note, plan, or assessment here.&#10;&#10;Use a de-identified document — remove client names, dates of birth, and identifying details. This runs entirely in your browser; nothing is transmitted or stored."></textarea>
+
+              <div class="uploadActions">
+                <div class="selectwrap wide">
+                  <select id="docTypeSel" aria-label="Document type">
+                    <option value="saiop">SAIOP / SACOT service note</option>
+                    <option value="pcp">Person-Centered Plan</option>
+                    <option value="pss">Peer Support service note</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary" id="runBtn">Run compliance review <span class="arrow">→</span></button>
+                <button class="linkbtn" id="clearBtn">Clear</button>
+              </div>
+              <p class="privacy">Runs locally in this browser. Nothing is uploaded, transmitted, or stored.</p>
+            </div>
+
+            <aside>
+              <div class="card">
+                <h2>Sample documents <em>click to load</em></h2>
+                <div class="samples" id="samples"></div>
+              </div>
+              <div class="card infocard">
+                <h2>What runs on your text</h2>
+                <ul class="checklist">
+                  <li>Date of service, session time, and billed units</li>
+                  <li>Signature and professional credentials</li>
+                  <li>Intervention specificity — named vs. described</li>
+                  <li>Beneficiary response and documented progress</li>
+                  <li>Link to a numbered Person-Centered Plan objective</li>
+                  <li>Objective measurability, target dates, crisis plan</li>
+                  <li>Peer Support recovery function vs. transport only</li>
+                  <li>Person-centred language and placeholder text</li>
+                  <li>Cloned language against notes already on file</li>
+                </ul>
+                <p class="infonote">These checks are pattern-based and run in your browser. The production system adds AI clinical judgement on top — medical necessity, ASAM dimension consistency, and diagnosis support.</p>
+              </div>
+            </aside>
+          </div>
         </section>
 
-        <!-- REVIEW -->
+        <!-- ══════ RESULTS ══════ -->
         <section class="panel" id="review" hidden>
-          <div class="panel-intro"><h3>Document review — the core of the system</h3><p>A clinician submits a note here before signing it. Within seconds the system returns a compliance score, a decision on whether it can be signed, and a list of every problem an auditor would find — each with the fix already written.</p></div>
-          <div class="docpick">
-            <span class="dp-label">Document</span>
-            <button class="dp" data-doc="saiop" aria-pressed="true">SAIOP group note</button>
-            <button class="dp" data-doc="pcp" aria-pressed="false">Person-Centered Plan</button>
-            <button class="dp" data-doc="pss" aria-pressed="false">Peer Support note</button>
+          <div class="panel-intro">
+            <h3>Review results</h3>
+            <p>Every finding names the rule, shows the text that triggered it, and writes the correction. Click a finding to highlight its evidence in the document.</p>
           </div>
+
           <div class="strip" id="strip">
             <div class="scoreBlock">
               <div class="ringScore" id="ring" style="--p:0"><i id="scoreN">0</i></div>
               <span class="ringCap">Compliance score</span>
             </div>
-            <div class="vd"><div class="t" id="verdictT">Analysing document…</div>
-              <div class="u" id="verdictU">SAIOP group note · 14 Jul 2026 · M. Alvarez, CADC</div></div>
+            <div class="vd">
+              <div class="t" id="verdictT">Analysing…</div>
+              <div class="u" id="verdictU"></div>
+            </div>
             <div class="pillBlock"><span class="pill block" id="pill">Reviewing</span><span class="pillCap">Signature decision</span></div>
-            <div class="tog"><button data-doc="fail" aria-pressed="true">As submitted</button>
-              <button data-doc="pass" aria-pressed="false">After correction</button></div>
+            <div class="tog" id="togWrap" hidden>
+              <button data-state="fail" aria-pressed="true">As submitted</button>
+              <button data-state="pass" aria-pressed="false">After correction</button>
+            </div>
+            <button class="linkbtn" id="againBtn">← New review</button>
           </div>
+
           <div class="split">
             <div>
-              <div class="card"><h2>Submitted document <em id="docKind">SAIOP group note</em></h2>
+              <div class="card"><h2>Submitted document <em id="docKind"></em></h2>
                 <div class="cbody"><div class="meta" id="meta"></div><div class="note scan" id="noteBody"></div></div></div>
-              <div class="card" style="margin-top:18px"><h2>Cloned language check</h2>
-                <div class="cwrap"><div class="crow"><span class="clab">Similarity to prior note</span>
-                  <div class="ctrack"><div class="cfill" id="cfill" style="width:0%"></div></div>
-                  <span class="cval" id="cval">—</span></div><div class="cnote" id="cnote"></div></div></div>
+              <div class="card" style="margin-top:18px"><h2>Cloned language check <em>live similarity</em></h2>
+                <div class="cwrap">
+                  <div class="crow"><span class="clab">Highest match on file</span>
+                    <div class="ctrack"><div class="cfill" id="cfill" style="width:0%"></div></div>
+                    <span class="cval" id="cval">—</span></div>
+                  <div class="cnote" id="cnote"></div>
+                </div></div>
             </div>
             <div class="card"><h2>Findings <em id="fmeta"></em></h2>
               <div class="fbar" id="fbar"></div>
               <div class="legend">
-                <span><i class="sw crit"></i><b>Critical</b> — blocks signature regardless of score</span>
+                <span><i class="sw crit"></i><b>Critical</b> — blocks signature</span>
                 <span><i class="sw maj"></i><b>Major</b> — an auditor would cite this</span>
                 <span><i class="sw min"></i><b>Minor</b> — advisory</span>
+                <span><i class="sw pass"></i><b>Passed</b></span>
               </div>
               <div class="finds" id="finds"></div></div>
           </div>
+
           <div class="twoUp">
             <div class="foot"><b>Why there are two results, not one.</b> The score tells you how good the documentation is. The signature decision tells you whether it can be billed. They are deliberately separate: a note can score 96 and still be blocked for one missing signature, because an auditor does not average — they find the missing element.</div>
-            <div class="foot"><b>Every finding is traceable.</b> The code on each finding (SAI-14, PCP-14, PSS-07) is the rule number in your Compliance Rule Book, and the source line names the policy it comes from. Nothing the system flags is a matter of opinion — you can look it up.</div>
+            <div class="foot"><b>Every finding is traceable.</b> The code on each finding is the rule number in your Compliance Rule Book, and the source line names the policy behind it. Nothing flagged here is a matter of opinion — you can look it up.</div>
           </div>
         </section>
 
-        <!-- DASHBOARD -->
+        <!-- ══════ DASHBOARD ══════ -->
         <section class="panel" id="dash" hidden>
-          <div class="panel-intro"><h3>Supervisor dashboard — what your Clinical Director sees</h3><p>Every document reviewed across the agency, rolled up. Which clinicians need coaching, which plans have expired, and which deficiencies keep recurring. Sample figures shown for a 5-clinician agency over one month.</p></div>
+          <div class="panel-intro">
+            <h3>Supervisor dashboard</h3>
+            <p>Every document reviewed across the agency, rolled up. Which clinicians need coaching, which plans have lapsed, and which deficiencies keep recurring. Sample figures for a five-clinician agency.</p>
+          </div>
+
+          <div class="alerts">
+            <div class="alert crit"><span class="ai">!</span><div><b>5 Person-Centered Plans have expired.</b> Services delivered after a plan lapses are recoverable on audit. Highest priority this week.</div></div>
+            <div class="alert warn"><span class="ai">!</span><div><b>2 notes reused narrative across different beneficiaries.</b> Cross-client cloning has been escalated to the Clinical Director.</div></div>
+          </div>
+
           <div class="kpis">
-            <div class="kpi"><div class="l">Agency compliance</div><div class="v warn">87</div><div class="s">Up 4 since June</div></div>
+            <div class="kpi"><div class="l">Agency compliance</div><div class="v warn">87</div><div class="s trendup">▲ 4 since June</div></div>
             <div class="kpi"><div class="l">Ready to sign</div><div class="v good">71%</div><div class="s">142 of 200 reviewed</div></div>
-            <div class="kpi"><div class="l">Blocked</div><div class="v bad">23</div><div class="s">Awaiting correction</div></div>
+            <div class="kpi"><div class="l">Blocked</div><div class="v bad">23</div><div class="s trenddn">▼ 18 since June</div></div>
             <div class="kpi"><div class="l">Expired PCPs</div><div class="v bad">5</div><div class="s">Services at risk</div></div>
             <div class="kpi"><div class="l">Late signatures</div><div class="v warn">9</div><div class="s">Past 72 hours</div></div>
             <div class="kpi"><div class="l">Cloning flags</div><div class="v bad">6</div><div class="s">2 cross-client</div></div>
           </div>
+
           <div class="two">
-            <div class="card"><h2>By clinician <em>July 2026</em></h2>
-              <table><thead><tr><th>Clinician</th><th>Service</th><th style="text-align:right">Notes</th><th style="text-align:right">Avg</th><th style="text-align:right">Blocked</th></tr></thead>
-              <tbody>
-                <tr><td>M. Alvarez, CADC</td><td>SAIOP</td><td class="num">48</td><td class="num warn">79</td><td class="num bad">11</td></tr>
-                <tr><td>J. Okonkwo, LCSW</td><td>SACOT</td><td class="num">39</td><td class="num good">96</td><td class="num">1</td></tr>
-                <tr><td>T. Bell, CPSS</td><td>Peer Support</td><td class="num">52</td><td class="num warn">83</td><td class="num warn">6</td></tr>
-                <tr><td>R. Nunez, LCMHC</td><td>Outpatient</td><td class="num">31</td><td class="num good">94</td><td class="num">2</td></tr>
-                <tr><td>S. Whitfield, CPSS</td><td>Peer Support</td><td class="num">30</td><td class="num good">91</td><td class="num">3</td></tr>
-              </tbody></table></div>
+            <div class="card"><h2>Compliance trend <em>six months</em></h2>
+              <div class="chartwrap" id="trendChart"></div>
+            </div>
             <div class="card"><h2>Most frequent deficiencies <em>all services</em></h2>
               <div class="bars">
                 <div class="barw"><div class="bl"><span>Note does not reference a PCP objective</span><span class="bn">SAI-15</span></div><div class="bt"><div class="bf" style="width:88%"></div></div></div>
@@ -1935,12 +2094,20 @@ a {
                 <div class="barw"><div class="bl"><span>Credentials missing from signature</span><span class="bn">U-09</span></div><div class="bt"><div class="bf" style="width:29%"></div></div></div>
               </div></div>
           </div>
-          <div class="foot"><b>What a supervisor does with this.</b> The deficiency chart is the coaching agenda. Two SAIOP rules account for most blocked notes across the agency — a training issue, not eleven separate mistakes.</div>
+
+          <div class="card" style="margin-top:18px"><h2>By clinician <em>July 2026 · click a row for detail</em></h2>
+            <table class="clin"><thead><tr><th>Clinician</th><th>Service</th><th style="text-align:right">Notes</th><th style="text-align:right">Avg score</th><th style="text-align:right">Blocked</th><th style="text-align:right">Trend</th></tr></thead>
+            <tbody id="clinBody"></tbody></table>
+            <div class="drill" id="drill" hidden></div>
+          </div>
         </section>
 
-        <!-- AUDIT -->
+        <!-- ══════ AUDIT ══════ -->
         <section class="panel" id="audit" hidden>
-          <div class="panel-intro"><h3>Monthly mock audit — audit-ready, every month</h3><p>The system samples charts at random each month, scores every document in them, and writes the internal audit report. This is the evidence CARF surveyors and Trillium reviewers ask to see, produced automatically instead of when someone finds the time.</p></div>
+          <div class="panel-intro">
+            <h3>Monthly mock audit</h3>
+            <p>The system samples charts at random each month, scores every document in them, and writes the internal audit report — the evidence CARF surveyors and LME/MCO reviewers ask to see.</p>
+          </div>
           <div class="kpis">
             <div class="kpi"><div class="l">Charts sampled</div><div class="v cy">15</div><div class="s">Randomly selected</div></div>
             <div class="kpi"><div class="l">Documents scored</div><div class="v cy">214</div><div class="s">Every document in each chart</div></div>
@@ -1970,358 +2137,722 @@ a {
             </div></div>
         </section>
 
-        <!-- RULES -->
+        <!-- ══════ RULES ══════ -->
         <section class="panel" id="rules" hidden>
-          <div class="panel-intro"><h3>Rule library — and how other states would work</h3><p>The 129 checks are tiered. Universal rules hold anywhere; state rules are specific to North Carolina; payer rules are Trillium's additions on top. This is what makes the system extendable beyond one state without rebuilding it.</p></div>
+          <div class="panel-intro">
+            <h3>Rule library</h3>
+            <p>The checks are tiered. Universal rules hold anywhere; state rules are specific to the jurisdiction; payer rules are what the plan adds on top. This is what lets the system extend to another state without being rebuilt.</p>
+          </div>
           <div class="tiers">
             <div class="tc"><div class="tn">TIER 1</div><h3>Universal</h3>
               <p>Documentation principles that hold in every state: identification elements, signatures and credentials, intervention specificity, beneficiary response, cloned language, plan-to-note linkage.</p>
               <div class="cnt" style="color:var(--green)">55</div><div class="cl">rules · port to any state unchanged</div></div>
             <div class="tc"><div class="tn">TIER 2</div><h3>State</h3>
               <p>Service definitions, eligibility criteria, age limits, weekly hour ranges, service order authority, unit rules, licensure scope. Rewritten per state.</p>
-              <div class="cnt" style="color:var(--cyan)">61</div><div class="cl">rules · North Carolina</div></div>
+              <div class="cnt" style="color:var(--cyan)" id="tier2n">61</div><div class="cl" id="tier2l">rules · North Carolina</div></div>
             <div class="tc"><div class="tn">TIER 3</div><h3>Payer / plan</h3>
               <p>Overlays imposed by a specific LME/MCO or managed care plan above the state baseline. Configured per payer, per document.</p>
-              <div class="cnt" style="color:var(--pink)">13</div><div class="cl">rules · Trillium</div></div>
+              <div class="cnt" style="color:var(--pink)" id="tier3n">13</div><div class="cl" id="tier3l">rules · Trillium</div></div>
           </div>
-          <div class="card"><h2>State coverage <em>expandable</em></h2>
-            <div class="states">
-              <div class="srow"><span class="sname">North Carolina</span><span class="scount">129 rules</span><span class="sbadge on">Active</span></div>
-              <div class="srow"><span class="sname">South Carolina</span><span class="scount">55 universal</span><span class="sbadge off">Not mapped</span></div>
-              <div class="srow"><span class="sname">Virginia</span><span class="scount">55 universal</span><span class="sbadge off">Not mapped</span></div>
-              <div class="srow"><span class="sname">Georgia</span><span class="scount">55 universal</span><span class="sbadge off">Not mapped</span></div>
-              <div class="srow"><span class="sname">Tennessee</span><span class="scount">55 universal</span><span class="sbadge off">Not mapped</span></div>
-            </div></div>
+          <div class="card"><h2>State coverage <em>switch jurisdiction above to see the effect</em></h2>
+            <div class="states" id="stateList"></div></div>
           <div class="foot" style="margin-top:18px"><b>How multi-state works.</b> The rule set applied to a document is determined by the state in which the provider is licensed and Medicaid-enrolled, the payer being billed, and the service definition — not by the beneficiary's zip code. Zip is used to propose the correct state at setup and to flag when a beneficiary's location looks inconsistent with the configured jurisdiction. Adding a state means writing its Tier 2 rules; the 55 universal rules carry over unchanged.</div>
         </section>
+
+        <!-- ══════ ABOUT ══════ -->
+        <section class="panel" id="over" hidden>
+          <div class="panel-intro">
+            <h3>About this build</h3>
+            <p>An honest account of what runs here and what does not, so there is no confusion about what you are looking at.</p>
+          </div>
+          <div class="two">
+            <div class="card"><h2>Live in this prototype</h2>
+              <div class="cbody">
+                <ul class="checklist tick">
+                  <li>All checks run on whatever text you submit — nothing is pre-recorded</li>
+                  <li>Cloned-language detection uses real similarity scoring against notes on file</li>
+                  <li>Scores and signature decisions are computed from what the checks find</li>
+                  <li>Jurisdiction switching changes the active rule set</li>
+                  <li>Runs entirely in your browser — nothing is transmitted or stored</li>
+                </ul>
+              </div></div>
+            <div class="card"><h2>What the production system adds</h2>
+              <div class="cbody">
+                <ul class="checklist plus">
+                  <li>AI clinical judgement — medical necessity, ASAM dimension consistency, diagnosis support</li>
+                  <li>Document parsing for .docx and .pdf uploads</li>
+                  <li>Full chart history, so plan-to-note linkage is checked against the plan actually in force on the date of service</li>
+                  <li>Secure multi-user access with audit logging, hosted in your own HIPAA-eligible cloud</li>
+                  <li>The remaining rules that require clinical reasoning rather than pattern matching</li>
+                </ul>
+              </div></div>
+          </div>
+          <div class="statRow" style="margin-top:20px">
+            <div class="stat"><div class="n">129</div><div class="l">compliance checks defined</div></div>
+            <div class="stat"><div class="n">6</div><div class="l">document types covered</div></div>
+            <div class="stat"><div class="n">9</div><div class="l">regulatory sources verified</div></div>
+            <div class="stat"><div class="n">55</div><div class="l">rules portable to any state</div></div>
+          </div>
+          <div class="foot"><b>The written specification.</b> The Compliance Rule Book sets out all 129 checks per document type, each traced to the North Carolina policy it comes from. Section 14 lists ten questions only your Clinical Director can answer — signature deadlines, PCP review cycle, whether you deliver SAIOP to adolescents, and any Trillium requirements above state policy.</div>
+        </section>
+
       </div>
     </section>
 
     <footer class="site-foot">
       <div class="container">
-        <p>Omnificode Ltd · Intelligent Systems. Better Outcomes. · Demo build · Compliance Rule Book v1.1 (draft) · August 2026</p>
+        <p>Omnificode Ltd · Intelligent Systems. Better Outcomes. · Prototype v4.0 · Compliance Rule Book v1.1 (draft) · August 2026</p>
       </div>
     </footer>
   </main>
 
 <script>
-const DOCS={
- saiop_fail:{doc:"saiop",state:"fail",score:62,block:true,
-  kind:"SAIOP group note",label:"SAIOP group note",
-  verdict:"Blocked — 4 critical requirements not met",
-  sub:"Date of service 14 Jul 2026 · M. Alvarez, CADC · billed 4 units",
-  meta:[["Beneficiary","R. Coleman"],["Medicaid ID","901******4"],["Date of service","14 Jul 2026"],
-    ["Service","SAIOP — group (H0015)"],["Session time","<span class='miss'>not documented</span>"],
-    ["Units billed","4"],["Signed","M. Alvarez <span class='miss'>— credentials missing</span>"]],
-  body:`<p>Client attended <span class="ev" data-f="f1" data-sev="Critical">SAIOP group today. Group discussed relapse prevention and coping skills.</span></p>
-    <p><span class="ev" data-f="f2" data-sev="Critical">Client participated in group.</span> <span class="ev" data-f="f3" data-sev="Major">Client appears to be doing well.</span></p>
-    <p>Will continue to monitor. Plan: continue SAIOP as scheduled.</p>
-    <p class="fieldline">Objective addressed: <span class="gapx" data-f="f4">no PCP objective referenced</span> &nbsp; Session time: <span class="gapx" data-f="f5">start and stop time absent</span></p>`,
-  clone:{pct:96,text:"Critical — 96% identical to this beneficiary's note of 11 Jul 2026. Two further notes in the same week exceed the 80% threshold."},
-  findings:[
-   {id:"SAI-14",tier:"NC",sev:"Critical",f:"f1",t:"Group content documented, individual participation not evidenced",
-    w:"The narrative describes what the group covered. It does not evidence that this beneficiary received a billable service — the most frequently cited SAIOP audit finding.",
-    fix:"Document what R. Coleman specifically did, said, or worked on: what he contributed, what he struggled with, how he responded to the material.",src:"NC Medicaid CCP 8A-12 · Rule Book §8.3"},
-   {id:"U-15",tier:"Universal",sev:"Critical",f:"f2",t:"Intervention named but not described",
-    w:"\u201CParticipated in group\u201D names an activity without describing an intervention. A reviewer cannot tell what clinical service was delivered.",
-    fix:"State the intervention and the beneficiary's engagement with it — the specific relapse-prevention technique practised and how he applied it to his own triggers.",src:"NCDHHS RMDM · Rule Book §5.3"},
-   {id:"SAI-15",tier:"NC",sev:"Critical",f:"f4",t:"No Person-Centered Plan objective referenced",
-    w:"The note does not connect to any objective in the PCP in force on 14 Jul 2026. Without that link the service is not evidenced as medically necessary.",
-    fix:"Reference the specific objective. This beneficiary's active plan contains Objective 2.1 — identify and apply two coping strategies during high-risk situations, three times weekly.",src:"NC Medicaid CCP 8A-12 · Rule Book §8.3"},
-   {id:"U-04",tier:"Universal",sev:"Critical",f:"f5",t:"Start and stop time not documented",
-    w:"Four units are billed with no documented session duration, so billed units cannot be verified against time delivered.",
-    fix:"Record start and stop time. Four units requires the corresponding documented duration under the SAIOP unit rule.",src:"NCDHHS RMDM · Rule Book §5.1"},
-   {id:"U-09",tier:"Universal",sev:"Critical",f:null,t:"Signature does not include credentials",
-    w:"The signature must include the credentials of the staff member who delivered the service.",
-    fix:"Sign as \u201CM. Alvarez, CADC\u201D.",src:"NCDHHS RMDM · Rule Book §5.2"},
-   {id:"U-16",tier:"Universal",sev:"Major",f:"f3",t:"Beneficiary response not documented",
-    w:"\u201CAppears to be doing well\u201D is a clinician impression, not a documented response to an intervention.",
-    fix:"Describe what he did or reported that supports the impression — engagement level, insight shown, or feedback given.",src:"NCDHHS RMDM · Rule Book §5.3"},
-   {id:"U-18",tier:"Universal",sev:"Minor",f:null,t:"Language is not strengths-based",
-    w:"The note is written in observational terms throughout, with no reference to the beneficiary's strengths or own words.",
-    fix:"Include what R. Coleman identified as working for him, in his own words where possible.",src:"CARF · Rule Book §5.3"}]},
+/* ============ jurisdiction model ============ */
+const STATES={
+ NC:{code:"NC",name:"North Carolina",policy:"NC Medicaid CCP 8A-12",tier2:61,mapped:true,
+     note:"SAIOP is ASAM 2.1 at 9–19 hrs/week. SACOT is ASAM 2.5 at 20+ hrs/week, adults only. Policies 8A-12 and 8A-13 effective 01 Jan 2026."},
+ SC:{code:"SC",name:"South Carolina",policy:"SC Medicaid",tier2:0,mapped:false},
+ VA:{code:"VA",name:"Virginia",policy:"VA Medicaid",tier2:0,mapped:false},
+ GA:{code:"GA",name:"Georgia",policy:"GA Medicaid",tier2:0,mapped:false},
+ TN:{code:"TN",name:"Tennessee",policy:"TN Medicaid",tier2:0,mapped:false}
+};
+const PAYERS={
+ trillium:{name:"Trillium LME/MCO",tier3:13},
+ medicaid:{name:"State baseline",tier3:0},
+ commercial:{name:"Commercial plan",tier3:7},
+ statefunded:{name:"State-funded contract",tier3:4}
+};
+let CUR_STATE="NC", CUR_PAYER="trillium";
 
- saiop_pass:{doc:"saiop",state:"pass",score:97,block:false,
-  kind:"SAIOP group note — after correction",label:"SAIOP group note",
-  verdict:"Ready to sign — no critical findings",
-  sub:"Date of service 14 Jul 2026 · M. Alvarez, CADC · billed 4 units",
-  meta:[["Beneficiary","R. Coleman"],["Medicaid ID","901******4"],["Date of service","14 Jul 2026"],
-    ["Service","SAIOP — group (H0015)"],["Session time","09:00–12:00 (180 min)"],["Units billed","4"],
-    ["Signed","M. Alvarez, CADC — 14 Jul 2026, 16:20"]],
-  body:`<p>R. Coleman attended the 09:00–12:00 SAIOP group (relapse prevention: identifying high-risk situations). Addressed <b>Objective 2.1</b> — identify and apply two coping strategies during high-risk situations, three times weekly.</p>
-    <p>R. Coleman identified two personal high-risk situations: paydays and contact with a former colleague who still uses. He completed the trigger-mapping exercise and named delaying tactics and calling his sponsor as strategies he has used successfully twice since the last session.</p>
-    <p>He initially minimised the payday risk, then revised his own assessment during group discussion after another member described a similar pattern — an increase in insight from prior sessions, where he attributed relapse risk to external causes only.</p>
-    <p>He reports using his sponsor call strategy twice this week, meeting the objective's frequency target for the first time. Progress toward Objective 2.1 is evident.</p>
-    <p>Plan: continue SAIOP as authorised; revisit payday planning individually before the next pay cycle.</p>`,
-  clone:{pct:12,text:"Normal variation — 12% similarity to prior notes, consistent with shared curriculum language. No flag."},
-  findings:[{id:"—",tier:"Universal",sev:"Minor",f:null,t:"One advisory note",
-    w:"All critical and major checks passed. Diagnosis, PCP linkage, ASAM support, timing, units, and signature are complete and consistent.",
-    fix:"Optional: recording R. Coleman's own words about what made the sponsor call work would further strengthen the person-centred quality of the record.",src:"CARF · Rule Book §5.3"}]},
+/* ============ sample documents ============ */
+const SAMPLES={
+ saiop:{
+  label:"SAIOP group note",
+  sub:"Typical group note — the most audited document type",
+  fail:`Client attended SAIOP group today. Group discussed relapse prevention and coping skills. Client participated in group. Client appears to be doing well. Will continue to monitor. Plan: continue SAIOP as scheduled.`,
+  pass:`SAIOP group note — date of service 14 Jul 2026
+Session time: 09:00–12:00 (180 min). Units billed: 4.
 
- pcp_fail:{doc:"pcp",state:"fail",score:58,block:true,
-  kind:"Person-Centered Plan",label:"Person-Centered Plan",
-  verdict:"Blocked — 3 critical requirements not met",
-  sub:"Plan period 01 Jul 2026 – 31 Dec 2026 · J. Okonkwo, LCSW",
-  meta:[["Beneficiary","R. Coleman"],["Medicaid ID","901******4"],["Plan period","01 Jul 2026 – 31 Dec 2026"],
-    ["Service order","<span class='miss'>signed 09 Jul — after first service date</span>"],
-    ["Beneficiary signature","Present — 01 Jul 2026"],["QP signature","J. Okonkwo, LCSW — 01 Jul 2026"],
-    ["Next review","<span class='miss'>not scheduled</span>"]],
-  body:`<p><b>Goal 1</b> — <span class="ev" data-f="p1" data-sev="Major">Client will improve coping skills and reduce substance use.</span></p>
-    <p><b>Objective 1.1</b> — <span class="ev" data-f="p2" data-sev="Critical">Client will reduce anxiety.</span> <span class="gapx" data-f="p3">no target date</span></p>
-    <p><b>Objective 1.2</b> — <span class="ev" data-f="p2b" data-sev="Critical">Client will work on triggers.</span></p>
-    <p><b>Interventions</b> — SAIOP group; individual therapy.</p>
-    <p><b>Crisis plan</b> — <span class="ev" data-f="p4" data-sev="Major">Client will call 988 or go to the nearest emergency department.</span></p>
-    <p class="fieldline">Discharge criteria: <span class="gapx" data-f="p5">not documented</span> &nbsp; Amount / duration / frequency: <span class="gapx" data-f="p6">frequency not stated</span></p>`,
-  clone:{pct:34,text:"Normal variation — 34% similarity to plan templates, within expected range for structured plan language. No flag."},
-  findings:[
-   {id:"PCP-14",tier:"Universal",sev:"Critical",f:"p2",t:"Objective 1.1 is not measurable",
-    w:"\u201CReduce anxiety\u201D states no quantity, frequency, or defined criterion, so no reviewer can determine whether it has been met. This is the single most common PCP audit finding.",
-    fix:"Rewrite with an observable behaviour, a number, and a timeframe — for example: apply a learned grounding technique at least three times weekly, self-reported at each session, for six consecutive weeks.",src:"NCDHHS RMDM · Rule Book §7.2"},
-   {id:"PCP-14",tier:"Universal",sev:"Critical",f:"p2b",t:"Objective 1.2 is not measurable",
-    w:"\u201CWork on triggers\u201D describes an activity rather than an outcome, and contains no criterion for completion.",
-    fix:"State what the beneficiary will be able to do and how often — for example: identify three personal relapse triggers and name a corresponding coping response for each, demonstrated in session by 30 Sep 2026.",src:"NCDHHS RMDM · Rule Book §7.2"},
-   {id:"PCP-03",tier:"NC",sev:"Critical",f:null,t:"Service order dated after the first date of service",
-    w:"The order was signed on 09 Jul but services began 01 Jul. Services delivered before a signed order are not billable and are recoverable on audit.",
-    fix:"Obtain a corrected order dated on or before the first date of service, and review the intervening service dates with billing before submission.",src:"NC Medicaid CCP 8A · Rule Book §7.1"},
-   {id:"PCP-10",tier:"Universal",sev:"Major",f:"p1",t:"Goal is not written in the beneficiary's voice",
-    w:"The goal is written in clinical shorthand about the beneficiary rather than as an outcome he has identified for himself, which weakens person-centredness under both NC and CARF standards.",
-    fix:"Restate in his own words — for example: \u201CI want to stay clean and handle stress without using.\u201D",src:"CARF · Rule Book §7.2"},
-   {id:"PCP-15",tier:"Universal",sev:"Major",f:"p3",t:"Objective has no target date",
-    w:"Without a target date, progress cannot be assessed against a schedule and review cycles cannot be evidenced.",
-    fix:"Add a target date for each objective, aligned to the plan period.",src:"NCDHHS RMDM · Rule Book §7.2"},
-   {id:"PCP-19",tier:"Universal",sev:"Major",f:"p4",t:"Crisis plan is generic, not individualised",
-    w:"The crisis plan contains no beneficiary-specific warning signs, supports, or preferences — it would read identically for any beneficiary in the caseload.",
-    fix:"Include his identified early warning signs, the natural supports he named in the assessment, and his stated preferences for intervention.",src:"NCDHHS RMDM · Rule Book §7.3"},
-   {id:"PCP-20",tier:"Universal",sev:"Major",f:"p5",t:"Discharge criteria not documented",
-    w:"Discharge criteria must be present and stated in measurable terms.",
-    fix:"State the conditions under which SAIOP would step down, in the same measurable form as the objectives.",src:"NCDHHS RMDM · Rule Book §7.3"},
-   {id:"PCP-04",tier:"NC",sev:"Major",f:"p6",t:"Frequency of service not documented",
-    w:"Amount and duration are recorded but frequency is absent. NC Medicaid requires all three for each authorised service.",
-    fix:"State sessions per week for each authorised service.",src:"NC Medicaid CCP 8A · Rule Book §7.1"}]},
+R. Coleman attended the SAIOP group (relapse prevention: identifying high-risk situations), addressing Objective 2.1 — identify and apply two coping strategies during high-risk situations, three times weekly.
 
- pcp_pass:{doc:"pcp",state:"pass",score:96,block:false,
-  kind:"Person-Centered Plan — after correction",label:"Person-Centered Plan",
-  verdict:"Ready to sign — no critical findings",
-  sub:"Plan period 01 Jul 2026 – 31 Dec 2026 · J. Okonkwo, LCSW",
-  meta:[["Beneficiary","R. Coleman"],["Medicaid ID","901******4"],["Plan period","01 Jul 2026 – 31 Dec 2026"],
-    ["Service order","Signed 28 Jun 2026 — Dr A. Hayes, MD"],["Beneficiary signature","Present — 01 Jul 2026"],
-    ["QP signature","J. Okonkwo, LCSW — 01 Jul 2026"],["Next review","30 Sep 2026"]],
-  body:`<p><b>Goal 1</b> — “I want to stay clean and handle stress without using.” <span class="hl">(beneficiary's own words)</span></p>
-    <p><b>Objective 1.1</b> — R. Coleman will apply a learned grounding technique at least <b>three times weekly</b>, self-reported and reviewed at each session, for <b>six consecutive weeks</b>. Target date: <b>15 Sep 2026</b>.</p>
-    <p><b>Objective 1.2</b> — R. Coleman will identify <b>three</b> personal relapse triggers and name a corresponding coping response for each, demonstrated in session. Target date: <b>30 Sep 2026</b>.</p>
-    <p><b>Interventions</b> — SAIOP group, 3 sessions weekly, 3 hours per session, through 31 Dec 2026; individual therapy, 1 session weekly, 50 minutes.</p>
-    <p><b>Crisis plan</b> — Early warning signs identified by R. Coleman: sleep loss over two nights, avoiding his sponsor, driving past his former workplace. First contacts: his sponsor (named), then his sister (named). He has stated a preference for a call before any in-person response. 988 and emergency services if he cannot be reached.</p>
-    <p><b>Discharge criteria</b> — Objectives 1.1 and 1.2 met and sustained for eight weeks, with no positive screens in that period and a step-down plan agreed with R. Coleman.</p>`,
-  clone:{pct:29,text:"Normal variation — 29% similarity to plan templates, within expected range. No flag."},
-  findings:[{id:"—",tier:"Universal",sev:"Minor",f:null,t:"One advisory note",
-    w:"All critical and major checks passed. Goals, objectives, interventions, service order timing, signatures, crisis planning, and discharge criteria are complete and consistent with the assessment.",
-    fix:"Optional: recording which of the three triggers R. Coleman considers highest risk would strengthen the link between the plan and the group work.",src:"CARF · Rule Book §7.2"}]},
+He identified two personal high-risk situations: paydays, and contact with a former colleague who still uses. He completed the trigger-mapping exercise and named delaying tactics and calling his sponsor as strategies he has used successfully twice since the last session.
 
- pss_fail:{doc:"pss",state:"fail",score:54,block:true,
-  kind:"Peer Support service note",label:"Peer Support note",
-  verdict:"Blocked — 4 critical requirements not met",
-  sub:"Date of service 16 Jul 2026 · T. Bell, CPSS · billed 4 units",
-  meta:[["Beneficiary","D. Whitfield"],["Medicaid ID","902******7"],["Date of service","16 Jul 2026"],
-    ["Service","Peer Support (H0038)"],["Session time","14:00–15:00 (60 min)"],["Units billed","4"],
-    ["Signed","T. Bell, CPSS — 16 Jul 2026"]],
-  body:`<p><span class="ev" data-f="s1" data-sev="Critical">Met with client at the coffee shop on Main St. Client talked about his week.</span></p>
-    <p><span class="ev" data-f="s2" data-sev="Critical">Provided encouragement and support.</span> <span class="ev" data-f="s3" data-sev="Critical">Transported client home afterwards.</span></p>
-    <p>Client was in good spirits. Will meet again next week.</p>
-    <p class="fieldline">Recovery goal addressed: <span class="gapx" data-f="s4">no PCP recovery goal referenced</span></p>`,
-  clone:{pct:71,text:"Advisory — 71% similarity to this beneficiary's notes of 02 and 09 Jul 2026. Below the blocking threshold but the pattern suggests templated documentation."},
-  findings:[
-   {id:"PSS-07",tier:"NC",sev:"Critical",f:"s3",t:"Note documents transport and social contact only",
-    w:"Transportation, observation, and social visiting are not billable Peer Support activities on their own. As written, the note documents a kind and well-intentioned contact that would be very difficult to defend as a rehabilitative service.",
-    fix:"Document the recovery-oriented work that took place during the contact. If the session genuinely was transport and social time, it should not be billed as Peer Support.",src:"NC Medicaid CCP 8G · Rule Book §10.2"},
-   {id:"PSS-06",tier:"NC",sev:"Critical",f:"s1",t:"No recovery-oriented function evidenced",
-    w:"The note evidences none of the recognised peer support functions — promoting recovery, teaching self-advocacy, building self-efficacy, supporting community integration, developing natural supports, or purposeful use of lived experience.",
-    fix:"Name the function delivered and what the beneficiary did. For example: coached him to prepare three questions for his benefits appointment, and he practised asking them aloud.",src:"NC Medicaid CCP 8G · Rule Book §10.2"},
-   {id:"PSS-09",tier:"NC",sev:"Critical",f:"s4",t:"Not tied to a self-identified recovery goal",
-    w:"Peer Support must be coordinated within the context of the PCP. The note references no recovery goal from the plan in force on this date.",
-    fix:"Reference the goal. This beneficiary's plan contains Recovery Goal 1.2 — build confidence to self-advocate in appointments without a support person present.",src:"NC Medicaid CCP 8G · Rule Book §10.2"},
-   {id:"U-15",tier:"Universal",sev:"Critical",f:"s2",t:"Intervention named but not described",
-    w:"\u201CProvided encouragement and support\u201D names a posture rather than describing an intervention that was delivered.",
-    fix:"Describe what was actually done and how the beneficiary engaged with it.",src:"NCDHHS RMDM · Rule Book §5.3"},
-   {id:"PSS-10",tier:"NC",sev:"Major",f:null,t:"Beneficiary engagement and response not documented",
-    w:"\u201CIn good spirits\u201D is an impression. There is no record of how he engaged with any activity or what he took from it.",
-    fix:"Record what he said, tried, or decided during the contact.",src:"NC Medicaid CCP 8G · Rule Book §10.2"},
-   {id:"PSS-11",tier:"NC",sev:"Major",f:null,t:"Progress toward the recovery goal not documented",
-    w:"No statement of movement toward, or away from, the recovery goal.",
-    fix:"State whether he is closer to self-advocating independently, and on what evidence.",src:"NC Medicaid CCP 8G · Rule Book §10.2"},
-   {id:"PSS-08",tier:"NC",sev:"Minor",f:null,t:"Lived experience not referenced",
-    w:"Purposeful use of the specialist's own recovery experience is the distinguishing feature of Peer Support and is absent here.",
-    fix:"Where lived experience was shared, record it briefly and in service of his goal rather than as narrative about the specialist.",src:"NC Medicaid CCP 8G · Rule Book §10.2"}]},
+He initially minimised the payday risk, then revised his own assessment during group discussion after another member described a similar pattern — an increase in insight from prior sessions, where he attributed relapse risk to external causes only.
 
- pss_pass:{doc:"pss",state:"pass",score:95,block:false,
-  kind:"Peer Support service note — after correction",label:"Peer Support note",
-  verdict:"Ready to sign — no critical findings",
-  sub:"Date of service 16 Jul 2026 · T. Bell, CPSS · billed 4 units",
-  meta:[["Beneficiary","D. Whitfield"],["Medicaid ID","902******7"],["Date of service","16 Jul 2026"],
-    ["Service","Peer Support (H0038)"],["Session time","14:00–15:00 (60 min)"],["Units billed","4"],
-    ["Signed","T. Bell, CPSS — 16 Jul 2026"]],
-  body:`<p>Met with D. Whitfield in the community (coffee shop, Main St) for 60 minutes, addressing <b>Recovery Goal 1.2</b> — build confidence to self-advocate in appointments without a support person present.</p>
-    <p>He has a benefits review on 23 Jul and said he expected to “just nod and agree like last time.” We worked on self-advocacy: he drafted three questions he wants answered, then practised asking them aloud, twice. On the second attempt he asked without prompting and kept his question when I offered a counter-response.</p>
-    <p>I shared briefly that I had used a written list at my own reviews for the first year, and that having it on paper made it easier to speak. He decided to write his questions on a card to take with him.</p>
-    <p>He identified his sister as someone who could review the card with him beforehand — the first natural support he has named for this goal.</p>
-    <p>Progress toward Goal 1.2 is evident: this is the first session in which he rehearsed and sustained a question unprompted. Transport home was provided after the session and is not included in the billed time.</p>`,
-  clone:{pct:9,text:"Normal variation — 9% similarity to prior notes. No flag."},
-  findings:[{id:"—",tier:"NC",sev:"Minor",f:null,t:"One advisory note",
-    w:"All critical and major checks passed. The note evidences self-advocacy coaching and natural-support development, ties to Recovery Goal 1.2, records engagement and progress, and correctly excludes transport from billed time.",
-    fix:"Optional: noting the date he plans to review the card with his sister would give the next session a clear starting point.",src:"CARF · Rule Book §10.2"}]}
+He reports using his sponsor call strategy twice this week, meeting the objective's frequency target for the first time. Progress toward Objective 2.1 is evident.
+
+Plan: continue SAIOP as authorised; revisit payday planning individually before the next pay cycle.
+
+Signed: M. Alvarez, CADC — 14 Jul 2026, 16:20`},
+ pcp:{
+  label:"Person-Centered Plan",
+  sub:"Where measurability and service orders most often fail",
+  fail:`Person-Centered Plan
+Plan period: 01 Jul 2026 to 31 Dec 2026
+
+Goal 1: Client will improve coping skills and reduce substance use.
+Objective 1.1: Client will reduce anxiety.
+Objective 1.2: Client will work on triggers.
+
+Interventions: SAIOP group; individual therapy.
+Discharge: TBD`,
+  pass:`Person-Centered Plan — date of service 01 Jul 2026
+Plan period: 01 Jul 2026 to 31 Dec 2026. Next review 30 Sep 2026.
+
+Goal 1: "I want to stay clean and handle stress without using." (beneficiary's own words)
+
+Objective 1.1: R. Coleman will apply a learned grounding technique at least three times weekly, self-reported and reviewed at each session, for six consecutive weeks. Target date: 15 Sep 2026.
+Objective 1.2: R. Coleman will identify three personal relapse triggers and name a corresponding coping response for each, demonstrated in session. Target date: 30 Sep 2026.
+
+Interventions: SAIOP group, 3 sessions weekly, 3 hours per session, through 31 Dec 2026; individual therapy, 1 session weekly, 50 minutes.
+
+Crisis plan: Early warning signs identified by R. Coleman — sleep loss over two nights, avoiding his sponsor, driving past his former workplace. First contacts: his sponsor, then his sister. He has stated a preference for a call before any in-person response. 988 and emergency services if he cannot be reached.
+
+Discharge criteria: Objectives 1.1 and 1.2 met and sustained for eight weeks, with no positive screens in that period and a step-down plan agreed with R. Coleman. Progress reviewed monthly.
+
+Service order signed 28 Jun 2026 — A. Hayes, MD. Beneficiary signature present 01 Jul 2026. QP: J. Okonkwo, LCSW — 01 Jul 2026.`},
+ pss:{
+  label:"Peer Support note",
+  sub:"Transport and social contact vs. a billable recovery service",
+  fail:`Met with client at the coffee shop on Main St. Client talked about his week. Provided encouragement and support. Transported client home afterwards. Client was in good spirits. Will meet again next week.`,
+  pass:`Peer Support service note — date of service 16 Jul 2026
+Session time: 14:00–15:00 (60 min). Units billed: 4.
+
+Met with D. Whitfield in the community, addressing Recovery Goal 1.2 — build confidence to self-advocate in appointments without a support person present.
+
+He has a benefits review on 23 Jul and said he expected to "just nod and agree like last time." We worked on self-advocacy: he drafted three questions he wants answered, then practised asking them aloud, twice. On the second attempt he asked without prompting and kept his question when I offered a counter-response.
+
+I shared briefly that I had used a written list at my own reviews for the first year, and that having it on paper made it easier to speak. He decided to write his questions on a card to take with him.
+
+He identified his sister as someone who could review the card with him beforehand — the first natural support he has named for this goal.
+
+Progress toward Goal 1.2 is evident: this is the first session in which he rehearsed and sustained a question unprompted. Transport home was provided after the session and is not included in the billed time.
+
+Signed: T. Bell, CPSS — 16 Jul 2026`}
 };
 
-
+/* ============ helpers ============ */
 const el=id=>document.getElementById(id);
 const reduceMo=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let timers=[];
-const clearTimers=()=>{timers.forEach(clearTimeout);timers=[]};
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let timers=[]; const clearTimers=()=>{timers.forEach(clearTimeout);timers=[]};
+
+/* ============ jurisdiction UI ============ */
+function refreshJurisdiction(){
+  const S=STATES[CUR_STATE], P=PAYERS[CUR_PAYER];
+  const total=55+S.tier2+(S.mapped?P.tier3:0);
+  el("ruleCount").textContent=total;
+  el("tier2n").textContent=S.tier2;
+  el("tier2l").textContent="rules · "+S.name;
+  el("tier3n").textContent=S.mapped?P.tier3:0;
+  el("tier3l").textContent="rules · "+P.name;
+
+  const w=el("stateWarn");
+  if(!S.mapped){
+    w.hidden=false;
+    w.innerHTML=`<b>${S.name} is not yet mapped.</b> Only the 55 universal rules are active. The state-specific rules — service definitions, eligibility, hour ranges, unit rules — are written per state, and adding ${S.name} is roughly one to two weeks of rule-mapping work. This is the mechanism that lets CCIS extend beyond North Carolina without being rebuilt.`;
+  } else {
+    w.hidden=false;
+    w.className="statewarn ok";
+    w.innerHTML=`<b>${S.name} is fully mapped.</b> ${S.note}`;
+  }
+  if(!S.mapped) w.className="statewarn";
+
+  const list=el("stateList");
+  if(list){
+    list.innerHTML=Object.values(STATES).map(s=>`
+      <div class="srow${s.code===CUR_STATE?" active":""}">
+        <span class="sname">${s.name}</span>
+        <span class="scount">${s.mapped?55+s.tier2+" rules":"55 universal"}</span>
+        <span class="sbadge ${s.mapped?"on":"off"}">${s.mapped?"Active":"Not mapped"}</span>
+      </div>`).join("");
+  }
+}
+
+/* ============ samples list ============ */
+function buildSamples(){
+  el("samples").innerHTML=Object.entries(SAMPLES).map(([k,s])=>`
+    <button class="sample" data-sample="${k}">
+      <span class="stag">${s.label}</span>
+      <span class="ssub">${s.sub}</span>
+      <span class="sgo">Load →</span>
+    </button>`).join("");
+  document.querySelectorAll(".sample").forEach(b=>b.onclick=()=>{
+    const k=b.dataset.sample;
+    curSample=k; curState="fail";
+    el("pasteBox").value=SAMPLES[k].fail;
+    el("docTypeSel").value=k;
+    el("pasteBox").scrollIntoView({behavior:"smooth",block:"center"});
+    document.querySelectorAll("#togWrap button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.state==="fail"));
+    el("pasteBox").classList.add("flash");
+    setTimeout(()=>el("pasteBox").classList.remove("flash"),700);
+  });
+}
+
+/* ============ run a review ============ */
+let curSample=null, curState="fail", lastText="", lastType="saiop";
+
+function runReview(text,type,label){
+  lastText=text; lastType=type;
+  goTab("review",true);
+  clearTimers();
+
+  el("docKind").textContent=label||document.querySelector("#docTypeSel option:checked").textContent;
+  el("verdictU").textContent=`${text.trim().split(/\s+/).length} words · ${STATES[CUR_STATE].name} · ${PAYERS[CUR_PAYER].name}`;
+  el("noteBody").innerHTML=`<p>${esc(text).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")}</p>`;
+  el("meta").style.display="none";
+  el("strip").className="strip";
+  el("verdictT").textContent="Running compliance checks…";
+  el("pill").className="pill block"; el("pill").textContent="Reviewing";
+  el("scoreN").textContent="0"; el("ring").style.setProperty("--p",0);
+  el("noteBody").classList.add("busy");
+  el("fmeta").textContent="analysing";
+  el("fbar").innerHTML=`<span>Checking against the ${STATES[CUR_STATE].name} rule set…</span>`;
+  el("finds").innerHTML="";
+  el("cfill").style.width="0%"; el("cval").textContent="—"; el("cnote").textContent="";
+  el("togWrap").hidden=!curSample;
+
+  timers.push(setTimeout(()=>{
+    const r=analyse(text,type,CUR_STATE);
+    el("noteBody").classList.remove("busy");
+    el("strip").className="strip"+(r.blocked?"":" pass");
+    el("verdictT").textContent=r.verdict;
+    const p=el("pill");
+    p.className="pill "+(r.blocked?"block":"ok");
+    p.textContent=r.blocked?"Not ready to sign":"Ready to sign";
+    countTo(r.score,780);
+
+    const col=r.clone.pct>=80?"var(--red)":r.clone.pct>=60?"var(--gold)":"var(--green)";
+    el("cfill").style.width=r.clone.pct+"%"; el("cfill").style.background=col;
+    el("cval").textContent=r.clone.pct+"%"; el("cval").style.color=col;
+    el("cnote").textContent=r.clone.text;
+
+    const pass=r.findings.filter(f=>f.sev==="Pass").length;
+    el("fmeta").textContent=(r.crit+r.maj+r.min)+" issues · "+pass+" passed";
+    el("fbar").innerHTML=`<span class="c"><b>${r.crit}</b> critical</span><span class="m"><b>${r.maj}</b> major</span><span class="n"><b>${r.min}</b> minor</span><span class="pz"><b>${pass}</b> passed</span>`;
+
+    el("finds").innerHTML=r.findings.map((f,i)=>`
+      <div class="find sev-${f.sev}" data-ev="${f.ev?esc(f.ev).replace(/"/g,"&quot;"):""}" tabindex="0" role="button"
+           style="animation-delay:${reduceMo?0:i*45}ms">
+        <div class="fh"><span class="rid">${f.id}</span><span class="sev ${f.sev}">${f.sev}</span><span class="tier">${f.tier}</span></div>
+        <div class="ft">${f.t}</div><div class="fw">${f.w}</div>
+        ${f.fix?`<div class="fix"><b>Suggested correction</b>${f.fix}</div>`:""}
+        <div class="src">${f.src}</div>
+      </div>`).join("");
+    bindFinds();
+  },reduceMo?0:1000));
+}
 
 function countTo(target,ms){
   if(reduceMo){el("scoreN").textContent=target;el("ring").style.setProperty("--p",target);return}
   const t0=performance.now();
   (function step(now){
     const k=Math.min(1,(now-t0)/ms),e=1-Math.pow(1-k,3),v=Math.round(target*e);
-    el("scoreN").textContent=v;el("ring").style.setProperty("--p",v);
+    el("scoreN").textContent=v; el("ring").style.setProperty("--p",v);
     if(k<1)requestAnimationFrame(step);
   })(t0);
 }
 
-function renderDoc(k){
-  clearTimers();
-  const d=DOCS[k];
-  el("docKind").textContent=d.kind;
-  el("verdictU").textContent=d.sub;
-  el("meta").innerHTML=d.meta.map(m=>`<div>${m[0]}: &nbsp;<b>${m[1]}</b></div>`).join("");
-  el("noteBody").innerHTML=d.body;
-  el("cnote").textContent="";el("cfill").style.width="0%";
-  el("cval").textContent="—";el("cval").style.color="var(--ink-dim)";
-  el("strip").className="strip";
-  el("verdictT").textContent="Analysing document…";
-  el("pill").className="pill block";el("pill").textContent="Reviewing";
-  el("scoreN").textContent="0";el("ring").style.setProperty("--p",0);
-  el("noteBody").classList.add("busy");
-  el("fmeta").textContent="running 129 checks";
-  el("fbar").innerHTML='<span>Checking '+d.label+' against the North Carolina rule set…</span>';
-  el("finds").innerHTML="";
-  timers.push(setTimeout(()=>{
-    el("noteBody").classList.remove("busy");
-    el("strip").className="strip"+(d.block?"":" pass");
-    el("verdictT").textContent=d.verdict;
-    const p=el("pill");
-    p.className="pill "+(d.block?"block":"ok");
-    p.textContent=d.block?"Not ready to sign":"Ready to sign";
-    countTo(d.score,760);
-    const col=d.clone.pct>=80?"var(--red)":d.clone.pct>=60?"var(--gold)":"var(--green)";
-    el("cfill").style.width=d.clone.pct+"%";el("cfill").style.background=col;
-    el("cval").textContent=d.clone.pct+"%";el("cval").style.color=col;
-    el("cnote").textContent=d.clone.text;
-    const n=s=>d.findings.filter(f=>f.sev===s).length;
-    el("fmeta").textContent=d.findings.length+" total";
-    el("fbar").innerHTML=`<span class="c"><b>${n("Critical")}</b> critical</span><span class="m"><b>${n("Major")}</b> major</span><span class="n"><b>${n("Minor")}</b> minor</span>`;
-    el("finds").innerHTML=d.findings.map((f,i)=>`
-      <div class="find" data-f="${f.f||''}" tabindex="0" role="button" style="animation-delay:${reduceMo?0:i*55}ms">
-        <div class="fh"><span class="rid">${f.id}</span><span class="sev ${f.sev}">${f.sev}</span><span class="tier">${f.tier}</span></div>
-        <div class="ft">${f.t}</div><div class="fw">${f.w}</div>
-        <div class="fix"><b>Suggested correction</b>${f.fix}</div><div class="src">${f.src}</div>
-      </div>`).join("");
-    bindFinds();
-  },reduceMo?0:900));
-}
-
-const clearSel=()=>document.querySelectorAll(".find.on,.ev.on,.gapx.on").forEach(x=>x.classList.remove("on"));
-function selectFinding(fid,fromText){
-  clearSel();if(!fid)return;
-  const find=document.querySelector(`.find[data-f="${fid}"]`);
-  const ev=document.querySelector(`.ev[data-f="${fid}"], .gapx[data-f="${fid}"]`);
-  if(find)find.classList.add("on");
-  if(ev)ev.classList.add("on");
-  if(fromText&&find)find.scrollIntoView({behavior:"smooth",block:"nearest"});
-  if(!fromText&&ev)ev.scrollIntoView({behavior:"smooth",block:"center"});
-}
+/* highlight evidence inside the rendered note */
 function bindFinds(){
   document.querySelectorAll(".find").forEach(f=>{
-    const go=()=>{const fid=f.dataset.f;if(fid)selectFinding(fid,false);else{clearSel();f.classList.add("on")}};
-    f.onclick=go;f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}};
+    const go=()=>{
+      document.querySelectorAll(".find.on").forEach(x=>x.classList.remove("on"));
+      f.classList.add("on");
+      const ev=f.dataset.ev;
+      const body=el("noteBody");
+      body.innerHTML=body.innerHTML.replace(/<mark class="evm">(.*?)<\/mark>/g,"$1");
+      if(ev&&ev.length>3){
+        const idx=body.innerHTML.toLowerCase().indexOf(ev.toLowerCase());
+        if(idx>-1){
+          const orig=body.innerHTML.substr(idx,ev.length);
+          body.innerHTML=body.innerHTML.slice(0,idx)+'<mark class="evm">'+orig+'</mark>'+body.innerHTML.slice(idx+ev.length);
+          const m=body.querySelector(".evm");
+          if(m)m.scrollIntoView({behavior:"smooth",block:"center"});
+        }
+      }
+    };
+    f.onclick=go;
+    f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}};
   });
-  document.querySelectorAll(".ev,.gapx").forEach(e=>e.onclick=()=>selectFinding(e.dataset.f,true));
 }
 
-let curDoc="saiop", curState="fail";
-const applyDoc=()=>renderDoc(curDoc+"_"+curState);
+/* ============ dashboard ============ */
+const CLIN=[
+ {n:"M. Alvarez, CADC",s:"SAIOP",notes:48,avg:79,blocked:11,tr:-3,
+  top:["Group note lacks individual participation (SAI-14) — 9 notes","No PCP objective referenced (SAI-15) — 7 notes","Intervention not described (U-15) — 6 notes"],
+  act:"Targeted SAIOP documentation training before the next billing cycle."},
+ {n:"J. Okonkwo, LCSW",s:"SACOT",notes:39,avg:96,blocked:1,tr:2,
+  top:["Progress not explicitly stated (U-16b) — 2 notes"],
+  act:"No action required. Consider using their notes as the internal exemplar."},
+ {n:"T. Bell, CPSS",s:"Peer Support",notes:52,avg:83,blocked:6,tr:5,
+  top:["Not tied to a recovery goal (PSS-09) — 5 notes","Transport or social contact only (PSS-07) — 3 notes"],
+  act:"Supervision on what distinguishes a billable peer support contact."},
+ {n:"R. Nunez, LCMHC",s:"Outpatient",notes:31,avg:94,blocked:2,tr:1,
+  top:["Session duration missing (U-04) — 2 notes"],act:"Brief reminder on recording start and stop times."},
+ {n:"S. Whitfield, CPSS",s:"Peer Support",notes:30,avg:91,blocked:3,tr:4,
+  top:["Lived experience not referenced (PSS-08) — 4 notes"],act:"On track. Improving month on month."}
+];
+function buildDash(){
+  el("clinBody").innerHTML=CLIN.map((c,i)=>`
+    <tr data-i="${i}" tabindex="0">
+      <td>${c.n}</td><td>${c.s}</td><td class="num">${c.notes}</td>
+      <td class="num ${c.avg>=95?"good":c.avg>=85?"warn":"bad"}">${c.avg}</td>
+      <td class="num ${c.blocked>=6?"bad":c.blocked>=3?"warn":""}">${c.blocked}</td>
+      <td class="num ${c.tr>=0?"good":"bad"}">${c.tr>=0?"▲":"▼"} ${Math.abs(c.tr)}</td>
+    </tr>`).join("");
+  const show=i=>{
+    const c=CLIN[i];
+    document.querySelectorAll(".clin tr").forEach(r=>r.classList.toggle("on",r.dataset.i===String(i)));
+    const d=el("drill"); d.hidden=false;
+    d.innerHTML=`<h4>${c.n} — ${c.s}</h4>
+      <div class="dgrid">
+        <div><span class="dl">Most frequent deficiencies</span><ul>${c.top.map(t=>`<li>${t}</li>`).join("")}</ul></div>
+        <div><span class="dl">Recommended action</span><p>${c.act}</p></div>
+      </div>`;
+  };
+  document.querySelectorAll(".clin tr").forEach(r=>{
+    r.onclick=()=>show(r.dataset.i);
+    r.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();show(r.dataset.i)}};
+  });
 
-document.querySelectorAll(".tog button").forEach(b=>b.onclick=()=>{
-  document.querySelectorAll(".tog button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  curState=b.dataset.doc;           /* "fail" | "pass" */
-  applyDoc();
-});
-document.querySelectorAll(".dp").forEach(b=>b.onclick=()=>{
-  document.querySelectorAll(".dp").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  curDoc=b.dataset.doc;
-  /* always return to "as submitted" when switching document type */
-  curState="fail";
-  document.querySelectorAll(".tog button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.doc==="fail"));
-  applyDoc();
-});
-document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",e=>{
-  e.preventDefault();
-  startWalkthrough(b.dataset.goto);
-}));
+  /* trend chart */
+  const data=[{m:"Feb",v:71},{m:"Mar",v:74},{m:"Apr",v:76},{m:"May",v:79},{m:"Jun",v:83},{m:"Jul",v:87}];
+  const W=520,H=190,pad=30;
+  const x=i=>pad+i*((W-pad*2)/(data.length-1));
+  const y=v=>H-pad-((v-60)/40)*(H-pad*2);
+  const pts=data.map((d,i)=>`${x(i)},${y(d.v)}`).join(" ");
+  el("trendChart").innerHTML=`
+   <svg viewBox="0 0 ${W} ${H}" class="trendsvg" role="img" aria-label="Compliance trend">
+     <defs><linearGradient id="tgr" x1="0" y1="0" x2="1" y2="0">
+       <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#38b6ff"/></linearGradient>
+       <linearGradient id="tfill" x1="0" y1="0" x2="0" y2="1">
+       <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".28"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient></defs>
+     ${[60,70,80,90,100].map(v=>`<line x1="${pad}" y1="${y(v)}" x2="${W-pad}" y2="${y(v)}" stroke="rgba(255,255,255,.08)"/>
+        <text x="${pad-8}" y="${y(v)+4}" text-anchor="end" font-size="9" fill="#8a91bf">${v}</text>`).join("")}
+     <polygon points="${pts} ${x(data.length-1)},${H-pad} ${x(0)},${H-pad}" fill="url(#tfill)"/>
+     <polyline points="${pts}" fill="none" stroke="url(#tgr)" stroke-width="2.5" stroke-linecap="round"/>
+     ${data.map((d,i)=>`<circle cx="${x(i)}" cy="${y(d.v)}" r="4" fill="#0b1038" stroke="#38b6ff" stroke-width="2"/>
+        <text x="${x(i)}" y="${H-10}" text-anchor="middle" font-size="10" fill="#8a91bf">${d.m}</text>
+        <text x="${x(i)}" y="${y(d.v)-12}" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">${d.v}</text>`).join("")}
+   </svg>
+   <p class="chartnote">Pre-signature review introduced in April. Blocked documents fell from 41 to 23 over the same period.</p>`;
+}
 
-let reviewLoaded=false;
+/* ============ tabs ============ */
+let dashBuilt=false;
 function scrollToWork(){
-  const anchor=document.querySelector(".platform .tabs");
-  if(!anchor)return;
-  const hdr=document.querySelector(".site-header");
-  const off=(hdr?hdr.getBoundingClientRect().height:0)+16;
-  const y=anchor.getBoundingClientRect().top+window.scrollY-off;
-  window.scrollTo({top:Math.max(0,y),behavior:"smooth"});
+  const a=document.querySelector(".platform .tabs"); if(!a)return;
+  const h=document.querySelector(".site-header");
+  const off=(h?h.getBoundingClientRect().height:0)+26;
+  window.scrollTo({top:Math.max(0,a.getBoundingClientRect().top+window.scrollY-off),behavior:"smooth"});
 }
-
 function goTab(id,scroll){
   document.querySelectorAll(".platform .panel").forEach(p=>p.hidden=(p.id!==id));
   document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x.dataset.tab===id));
-  if(id==="review"&&!reviewLoaded){reviewLoaded=true;applyDoc()}
+  if(id==="dash"&&!dashBuilt){dashBuilt=true;buildDash()}
   if(scroll!==false)scrollToWork();
 }
 
-/* collapse the 3-step guide once the walkthrough starts, so the change on
-   screen is obvious. Scroll only AFTER the collapse animation finishes,
-   otherwise the layout shifts under the scroll and overshoots. */
-function startWalkthrough(id){
-  const g=document.querySelector(".howto");
-  const r=document.querySelector(".guide-restore");
-  const needsCollapse=g&&!g.classList.contains("collapsed");
-  if(needsCollapse){g.classList.add("collapsed");if(r)r.hidden=false;}
-  goTab(id,false);
-  if(needsCollapse) setTimeout(scrollToWork,500); else scrollToWork();
-}
-document.querySelector(".guide-restore")?.addEventListener("click",e=>{
-  e.preventDefault();
-  const g=document.querySelector(".howto");
-  if(g)g.classList.remove("collapsed");
-  e.currentTarget.hidden=true;
-  g?.scrollIntoView({behavior:"smooth",block:"center"});
-});
-document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>goTab(b.dataset.tab));
+/* ============ wiring ============ */
+document.addEventListener("DOMContentLoaded",init);
+if(document.readyState!=="loading")init();
+let inited=false;
+function init(){
+  if(inited)return; inited=true;
+  buildSamples(); refreshJurisdiction();
 
-/* landing-page links drive the platform */
-const JUMP={"Home":null,"Platform":"review","Features":"rules","Success Stories":"dash","Resources":"audit","About Us":"over"};
-document.querySelectorAll(".main-nav a").forEach(a=>{
-  const t=JUMP[a.textContent.trim()];
-  a.addEventListener("click",e=>{
-    e.preventDefault();
-    document.querySelectorAll(".main-nav a").forEach(x=>x.classList.remove("active"));
-    a.classList.add("active");
-    if(t)goTab(t); else window.scrollTo({top:0,behavior:"smooth"});
+  el("stateSel").onchange=e=>{CUR_STATE=e.target.value;refreshJurisdiction()};
+  el("payerSel").onchange=e=>{CUR_PAYER=e.target.value;refreshJurisdiction()};
+
+  /* upload */
+  const drop=el("drop"), fi=el("fileInput");
+  drop.onclick=()=>fi.click();
+  drop.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();fi.click()}};
+  ["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over")}));
+  ["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over")}));
+  drop.addEventListener("drop",e=>{if(e.dataTransfer.files[0])readFile(e.dataTransfer.files[0])});
+  fi.onchange=()=>{if(fi.files[0])readFile(fi.files[0])};
+
+  function readFile(f){
+    const ext=(f.name.split(".").pop()||"").toLowerCase();
+    if(["txt","md","rtf","csv"].includes(ext)){
+      const r=new FileReader();
+      r.onload=()=>{el("pasteBox").value=r.result;curSample=null;
+        drop.querySelector("h4").textContent=f.name;};
+      r.readAsText(f);
+    } else {
+      drop.querySelector("h4").textContent=f.name;
+      drop.querySelector("p").innerHTML=`<span class="warn">.${ext} parsing is added in the production build.</span> For this demo, paste the text below.`;
+      el("pasteBox").focus();
+    }
+  }
+
+  el("runBtn").onclick=()=>{
+    const t=el("pasteBox").value.trim();
+    if(t.length<25){
+      el("pasteBox").classList.add("err");
+      el("pasteBox").placeholder="Paste at least a few sentences of a clinical note, or load a sample document from the right.";
+      setTimeout(()=>el("pasteBox").classList.remove("err"),1200);
+      el("pasteBox").focus(); return;
+    }
+    runReview(t,el("docTypeSel").value);
+  };
+  el("pasteBox").addEventListener("input",()=>{
+    const cur=curSample?SAMPLES[curSample][curState]:null;
+    if(cur===null||el("pasteBox").value.trim()!==cur.trim()) curSample=null;
   });
-});
-document.querySelectorAll(".btn-demo,.btn-primary,.btn-outline,.btn-cta,.btn-mini").forEach(b=>{
-  if(b.hasAttribute("data-goto"))return;          /* handled above */
-  b.addEventListener("click",e=>{e.preventDefault();startWalkthrough("review")});
-});
-document.querySelector(".dashboard-card")?.addEventListener("click",()=>goTab("dash"));
 
-goTab("over",false);
+  el("clearBtn").onclick=()=>{el("pasteBox").value="";curSample=null;
+    drop.querySelector("h4").textContent="Drop a document here";};
+  el("againBtn").onclick=()=>goTab("upload",true);
+
+  /* as submitted / after correction */
+  document.querySelectorAll("#togWrap button").forEach(b=>b.onclick=()=>{
+    if(!curSample)return;
+    document.querySelectorAll("#togWrap button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    curState=b.dataset.state;
+    const s=SAMPLES[curSample];
+    runReview(s[curState],curSample,s.label+(curState==="pass"?" — after correction":""));
+  });
+
+  document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>goTab(b.dataset.tab));
+
+  /* landing page links */
+  const JUMP={"Home":null,"Platform":"upload","Features":"rules","Success Stories":"dash","Resources":"audit","About Us":"over"};
+  document.querySelectorAll(".main-nav a").forEach(a=>{
+    const t=JUMP[a.textContent.trim()];
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      document.querySelectorAll(".main-nav a").forEach(x=>x.classList.remove("active"));
+      a.classList.add("active");
+      if(t)goTab(t); else window.scrollTo({top:0,behavior:"smooth"});
+    });
+  });
+  document.querySelectorAll(".btn-demo,.btn-primary,.btn-outline,.btn-cta,.btn-mini").forEach(b=>{
+    if(b.id==="runBtn")return;
+    b.addEventListener("click",e=>{e.preventDefault();goTab("upload")});
+  });
+  document.querySelector(".dashboard-card")?.addEventListener("click",()=>goTab("dash"));
+
+  goTab("upload",false);
+}
+
+</script>
+<script>
+/* ============================================================
+   LIVE ANALYSER
+   Real, deterministic checks that run in the browser on whatever
+   text is submitted. No canned results. Pattern-based only —
+   the production system adds AI clinical judgement on top.
+   ============================================================ */
+
+const CRED_RE=/\b(LCSW|LCAS|LCAS-A|CADC|CSAC|CPSS|LCMHC|LCMHCA|LMFT|QP|AP|MD|DO|NP|PA|RN|LPC|CCS|PSS)\b/;
+const DATE_RE=/\b(0?[1-9]|1[0-2])[\/\-](0?[1-9]|[12]\d|3[01])[\/\-](20)?\d{2}\b|\b\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4}\b|\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}\b/i;
+const TIMERANGE_RE=/\b([01]?\d|2[0-3])[:.][0-5]\d\s?(am|pm)?\s?(–|-|—|to)\s?([01]?\d|2[0-3])[:.][0-5]\d\s?(am|pm)?/i;
+const DURATION_RE=/\b\d{1,3}\s?(min|mins|minutes|hour|hours|hrs)\b/i;
+const UNITS_RE=/\b\d{1,3}\s?units?\b|\bunits?\b[^.\n]{0,14}?\b\d{1,3}\b/i;
+const GOALREF_RE=/\b(objective|goal)\s*#?\s*\d+(\.\d+)?\b/i;
+const MEASURE_RE=/\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s*(x|times|sessions?|days?|weeks?|occasions?)\b|\b(daily|weekly|twice weekly|three times weekly|per week|per day|each session)\b/i;
+const TARGETDATE_RE=/\b(target date|by|review date|completion date)\b[^.]{0,40}?\d/i;
+const RESPONSE_RE=/\b(client|beneficiary|he|she|they|consumer|member)\s+(reported|stated|said|identified|described|demonstrated|practised|practiced|completed|declined|refused|asked|revised|acknowledged|expressed|named|chose|agreed)\b/i;
+
+const VAGUE=[
+ "participated in group","participated in the group","attended group","was present",
+ "provided support","provided encouragement","offered support","gave support",
+ "doing well","appears to be doing well","in good spirits","seemed fine","no issues",
+ "continue to monitor","will continue to monitor","processed feelings","processed triggers",
+ "discussed issues","talked about his week","talked about her week","checked in",
+ "engaged in session","engaged well","good session","client did well"];
+const PLACEHOLDER=[/\bTBD\b/i,/\bN\/A\b/i,/\bsee above\b/i,/\bsee note\b/i,/\bXXX+\b/,/\[.*?\]/,/\bTODO\b/i,/\bpending\b/i];
+const STIGMA=["addict","addicts","junkie","alcoholic","clean urine","dirty urine","dirty screen","non-compliant","noncompliant","refuses to comply","manipulative","drug seeking","frequent flyer"];
+const STRENGTH=/\b(strength|strengths|identified|his own words|her own words|in their own words|chose|decided|self-reported|natural support|preference|proud|able to|succeeded|managed)\b/i;
+
+const norm=t=>t.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
+function shingles(t,n=3){
+  const w=norm(t).split(" ").filter(Boolean); const s=new Set();
+  for(let i=0;i<=w.length-n;i++) s.add(w.slice(i,i+n).join(" "));
+  return s;
+}
+/* Real Jaccard similarity on word trigrams */
+function similarity(a,b){
+  const A=shingles(a),B=shingles(b);
+  if(!A.size||!B.size)return 0;
+  let inter=0; A.forEach(x=>{if(B.has(x))inter++});
+  return Math.round(100*inter/(A.size+B.size-inter));
+}
+
+/* Notes already "on file" for this beneficiary — used for real cloning detection */
+const PRIOR_NOTES=[
+ {date:"11 Jul 2026",text:"Client attended SAIOP group today. Group discussed relapse prevention and coping skills. Client participated in group. Client appears to be doing well. Will continue to monitor. Plan: continue SAIOP as scheduled."},
+ {date:"09 Jul 2026",text:"Met with client at the coffee shop on Main St. Client talked about his week. Provided encouragement and support. Transported client home afterwards. Client was in good spirits."},
+ {date:"07 Jul 2026",text:"Client attended SAIOP group. Group covered trigger identification. Client engaged in session. Continue current plan."}
+];
+
+function locate(text,phrase){
+  const i=text.toLowerCase().indexOf(phrase.toLowerCase());
+  if(i<0)return null;
+  return text.slice(i,i+phrase.length);
+}
+
+/* ---------- the analyser ---------- */
+function analyse(text,docType,stateCode){
+  const F=[];                       // findings
+  const t=text.trim();
+  const words=t.split(/\s+/).filter(Boolean).length;
+  const isPlan=docType==="pcp";
+  const isPeer=docType==="pss";
+  const S=STATES[stateCode]||STATES.NC;
+  const add=(id,tier,sev,title,why,fix,src,ev)=>F.push({id,tier,sev,t:title,w:why,fix,src,ev:ev||null});
+
+  /* ---- Universal: identification & billing ---- */
+  if(!DATE_RE.test(t))
+    add("U-03","Universal","Critical","Date of service not found",
+      "No date of service could be identified in the document. Every service note must carry a valid date of service.",
+      "Add the date of service in a clear format, for example 14 Jul 2026.","NCDHHS RMDM · Rule Book §5.1");
+
+  if(!isPlan){
+    if(!TIMERANGE_RE.test(t)&&!DURATION_RE.test(t))
+      add("U-04","Universal","Critical","Start and stop time not documented",
+        "No session time or duration was found. Billed units cannot be verified against time delivered, which makes the units indefensible on review.",
+        "Record start and stop time, for example 09:00–12:00 (180 min).","NCDHHS RMDM · Rule Book §5.1");
+    else if(TIMERANGE_RE.test(t))
+      F.push({id:"U-04",tier:"Universal",sev:"Pass",t:"Session time documented",
+        w:"A start and stop time was found and can be checked against the billed units.",fix:"",src:"NCDHHS RMDM · Rule Book §5.1",
+        ev:t.match(TIMERANGE_RE)[0]});
+
+    if(!UNITS_RE.test(t))
+      add("U-05","Universal","Major","Billed units not stated in the note",
+        "No unit count was found. Units should be documented so that time delivered and time billed can be reconciled.",
+        "State the units billed for this contact.","NCDHHS RMDM · Rule Book §5.1");
+  }
+
+  /* ---- Universal: signature & credentials ---- */
+  if(!CRED_RE.test(t))
+    add("U-09","Universal","Critical","No professional credentials found in the signature",
+      "The signature must include the credentials of the staff member who delivered the service. No recognised credential was detected.",
+      "Sign with credentials, for example “M. Alvarez, CADC”.","NCDHHS RMDM · Rule Book §5.2");
+  else
+    F.push({id:"U-09",tier:"Universal",sev:"Pass",t:"Credentials present",
+      w:"A recognised professional credential was found in the document.",fix:"",src:"NCDHHS RMDM · Rule Book §5.2",
+      ev:t.match(CRED_RE)[0]});
+
+  /* ---- Universal: intervention specificity ---- */
+  const vagueHits=VAGUE.filter(p=>norm(t).includes(norm(p)));
+  if(vagueHits.length)
+    add("U-15","Universal","Critical","Intervention named but not described",
+      `Language of this kind names an activity without describing an intervention. A reviewer cannot tell what clinical service was delivered. Detected: “${vagueHits.slice(0,3).join("”, “")}”.`,
+      "State the specific intervention used and how the beneficiary engaged with it — what was practised, what they said or did in response.",
+      "NCDHHS RMDM · Rule Book §5.3", locate(t,vagueHits[0]));
+
+  /* ---- Universal: beneficiary response ---- */
+  if(!isPlan&&!RESPONSE_RE.test(t))
+    add("U-16","Universal","Major","Beneficiary response not documented",
+      "No record was found of what the beneficiary said, did, or how they responded to the intervention. Clinician impressions alone do not evidence a response.",
+      "Describe the beneficiary's own words or actions during the contact.","NCDHHS RMDM · Rule Book §5.3");
+
+  /* ---- Universal: placeholders ---- */
+  const ph=PLACEHOLDER.find(r=>r.test(t));
+  if(ph)
+    add("U-17","Universal","Major","Placeholder or unfinished text detected",
+      "The document contains text that appears to be a placeholder rather than clinical content. Auditors treat unfinished fields as incomplete records.",
+      "Replace the placeholder with the required content, or remove the field if it does not apply.",
+      "NCDHHS RMDM · Rule Book §5.3", (t.match(ph)||[])[0]);
+
+  /* ---- Universal: stigmatising language ---- */
+  const stig=STIGMA.filter(w=>norm(t).includes(norm(w)));
+  if(stig.length)
+    add("U-18","Universal","Minor","Language is not person-centred",
+      `Terminology detected that CARF and person-centred standards discourage: “${stig.join("”, “")}”.`,
+      "Rewrite using person-first, strengths-based language.","CARF · Rule Book §5.3", locate(t,stig[0]));
+  else if(!STRENGTH.test(t))
+    add("U-18","Universal","Minor","No strengths-based content detected",
+      "The document contains no reference to the beneficiary's strengths, preferences, or own words.",
+      "Include what the beneficiary identified as working for them, in their own words where possible.","CARF · Rule Book §5.3");
+
+  /* ---- Brevity ---- */
+  if(words<45&&!isPlan)
+    add("U-15b","Universal","Major","Note is unusually brief",
+      `The document contains ${words} words. Notes this short rarely evidence the required elements — purpose of contact, intervention delivered, and beneficiary response.`,
+      "Expand to cover what was worked on, how the beneficiary engaged, and progress toward the plan objective.",
+      "NCDHHS RMDM · Rule Book §5.3");
+
+  /* ---- Progress documentation ---- */
+  if(!isPlan&&!/\b(progress|improve[d]?|increase[d]?|decrease[d]?|first time|no change|regress|maintained|met the|meeting the)\b/i.test(t))
+    add("U-16b","Universal","Minor","Progress toward the objective not explicitly stated",
+      "No statement of movement toward, or away from, the plan objective was detected. Lack of progress is equally valid to record, but it must be recorded.",
+      "State whether the beneficiary is closer to the objective, and on what evidence.","NCDHHS RMDM · Rule Book §5.3");
+
+  /* ---- Plan linkage ---- */
+  if(!isPlan){
+    if(!GOALREF_RE.test(t))
+      add(isPeer?"PSS-09":"SAI-15",S.code,"Critical","No Person-Centered Plan objective referenced",
+        "The note does not reference a numbered goal or objective from the plan in force on this date. Without that link the service is not evidenced as medically necessary.",
+        "Reference the specific objective the session addressed, for example “Objective 2.1”.",
+        `${S.policy} · Rule Book §8.3`);
+    else
+      F.push({id:isPeer?"PSS-09":"SAI-15",tier:S.code,sev:"Pass",t:"Plan objective referenced",
+        w:"The note ties the service to a numbered objective in the Person-Centered Plan.",fix:"",
+        src:`${S.policy} · Rule Book §8.3`,ev:t.match(GOALREF_RE)[0]});
+  }
+
+  /* ---- Peer Support specific ---- */
+  if(isPeer){
+    const transportOnly=/\b(transport|transported|drove|ride|gave him a lift|drop(ped)? off)\b/i.test(t);
+    const recovery=/\b(self-advocacy|self advocacy|advocate|recovery goal|natural support|community integration|self-efficacy|coping|rehearse|practised|practiced|coached|lived experience|peer support|independence)\b/i.test(t);
+    if(transportOnly&&!recovery)
+      add("PSS-07",S.code,"Critical","Documents transport or social contact only",
+        "Transportation, observation, and social visiting are not billable Peer Support activities on their own. As written this would be very difficult to defend as a rehabilitative service.",
+        "Document the recovery-oriented work delivered during the contact. If the session genuinely was transport and social time, it should not be billed as Peer Support.",
+        `${S.policy} · Rule Book §10.2`);
+    if(!recovery)
+      add("PSS-06",S.code,"Critical","No recovery-oriented function evidenced",
+        "None of the recognised peer support functions were detected — promoting recovery, teaching self-advocacy, building self-efficacy, supporting community integration, developing natural supports, or purposeful use of lived experience.",
+        "Name the function delivered and what the beneficiary did as a result.",
+        `${S.policy} · Rule Book §10.2`);
+  }
+
+  /* ---- Plan (PCP) specific ---- */
+  if(isPlan){
+    const objBlocks=t.split(/\n+/).filter(l=>/objective/i.test(l));
+    let unmeasured=0;
+    objBlocks.forEach(l=>{ if(!MEASURE_RE.test(l)) unmeasured++; });
+    if(objBlocks.length===0)
+      add("PCP-12","Universal","Critical","No objectives found",
+        "No objectives could be identified in the plan. Each goal must carry at least one objective.",
+        "Add at least one measurable objective beneath each goal.","NCDHHS RMDM · Rule Book §7.2");
+    else if(unmeasured>0)
+      add("PCP-14","Universal","Critical",`${unmeasured} of ${objBlocks.length} objectives are not measurable`,
+        "An objective must state a quantity, frequency, or defined criterion so that a reviewer can determine whether it has been met. This is the most common Person-Centered Plan audit finding.",
+        "Rewrite with an observable behaviour, a number, and a timeframe — for example: apply a grounding technique at least three times weekly, self-reported at each session, for six consecutive weeks.",
+        "NCDHHS RMDM · Rule Book §7.2", objBlocks.find(l=>!MEASURE_RE.test(l)));
+    else
+      F.push({id:"PCP-14",tier:"Universal",sev:"Pass",t:"All objectives are measurable",
+        w:`${objBlocks.length} objectives detected, each carrying a quantity, frequency, or defined criterion.`,fix:"",
+        src:"NCDHHS RMDM · Rule Book §7.2"});
+
+    if(!TARGETDATE_RE.test(t))
+      add("PCP-15","Universal","Major","No target dates detected",
+        "Objectives must carry target dates so progress can be assessed against a schedule.",
+        "Add a target date to each objective, aligned to the plan period.","NCDHHS RMDM · Rule Book §7.2");
+
+    if(!/\bcrisis\b/i.test(t))
+      add("PCP-19","Universal","Critical","No crisis plan detected",
+        "A crisis prevention and intervention plan must be present and individualised to the beneficiary.",
+        "Add a crisis plan naming this beneficiary's early warning signs, named supports, and stated preferences.",
+        "NCDHHS RMDM · Rule Book §7.3");
+
+    if(!/\bdischarge\b/i.test(t))
+      add("PCP-20","Universal","Major","Discharge criteria not documented",
+        "Discharge criteria must be present and stated in measurable terms.",
+        "State the conditions under which this level of care would step down.","NCDHHS RMDM · Rule Book §7.3");
+  }
+
+  /* ---- Cloned language: real similarity computation ---- */
+  let best={pct:0,date:null};
+  PRIOR_NOTES.forEach(n=>{ const p=similarity(t,n.text); if(p>best.pct) best={pct:p,date:n.date}; });
+  let cloneNote;
+  if(best.pct>=95){
+    cloneNote=`Critical — ${best.pct}% identical to this beneficiary's note of ${best.date}.`;
+    add("CL-01","Universal","Critical","Cloned documentation detected",
+      `This document is ${best.pct}% identical to the note of ${best.date} already on file for this beneficiary. Cloned documentation is a standard audit finding.`,
+      "Rewrite the narrative to reflect what actually happened in this session.","Rule Book §12");
+  } else if(best.pct>=80){
+    cloneNote=`Probable cloning — ${best.pct}% similar to the note of ${best.date}.`;
+    add("CL-01","Universal","Major","Probable cloned language",
+      `This document is ${best.pct}% similar to the note of ${best.date}. Above 80% the pattern is difficult to defend as independent documentation.`,
+      "Vary the narrative to reflect this session specifically.","Rule Book §12");
+  } else if(best.pct>=60){
+    cloneNote=`Advisory — ${best.pct}% similar to the note of ${best.date}. Below the blocking threshold.`;
+    add("CL-01","Universal","Minor","Repetitive phrasing",
+      `${best.pct}% similarity to the note of ${best.date}. Within tolerance, but the pattern suggests templated documentation.`,
+      "Vary the phrasing between sessions.","Rule Book §12");
+  } else {
+    cloneNote=`Normal variation — ${best.pct}% similarity to notes already on file. No flag.`;
+  }
+
+  /* ---- scoring ---- */
+  const real=F.filter(f=>f.sev!=="Pass");
+  const crit=real.filter(f=>f.sev==="Critical").length;
+  const maj=real.filter(f=>f.sev==="Major").length;
+  const min=real.filter(f=>f.sev==="Minor").length;
+  let score=100-(crit*8)-(maj*4)-(min*1.5);
+  score=Math.round(Math.max(18,Math.min(99,score)));
+  const blocked=crit>0||score<85;
+
+  /* order: critical → major → minor → pass */
+  const rank={Critical:0,Major:1,Minor:2,Pass:3};
+  F.sort((a,b)=>rank[a.sev]-rank[b.sev]);
+
+  return {
+    score, blocked, crit, maj, min, words,
+    verdict: blocked
+      ? (crit>0 ? `Blocked — ${crit} critical requirement${crit>1?"s":""} not met` : "Blocked — score below the 85 threshold")
+      : "Ready to sign — no critical findings",
+    clone:{pct:best.pct,text:cloneNote},
+    findings:F
+  };
+}
 
 </script>
 </body>
